@@ -2,10 +2,9 @@ import React, { Suspense } from "react";
 
 type AsyncBoundaryProps = {
     fallback?: React.ReactNode;
-    children: React.ReactNode; // ✅ Tell TS we accept children
+    children: React.ReactNode;
 };
 
-// Simple ErrorBoundary
 class ErrorBoundary extends React.Component<
     { children: React.ReactNode },
     { hasError: boolean; error: any }
@@ -27,7 +26,6 @@ class ErrorBoundary extends React.Component<
     }
 }
 
-// Suspense + ErrorBoundary wrapper
 const AsyncBoundary: React.FC<AsyncBoundaryProps> = ({
                                                          fallback = <div>Loading...</div>,
                                                          children,
